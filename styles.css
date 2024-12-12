@@ -1,0 +1,129 @@
+/* General Reset */
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+    background: radial-gradient(circle, #001331 0%, #000814 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 0 20px;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    padding: 20px;
+    background-color: #00264d;
+    border-bottom: 5px solid #004080;
+    position: relative;
+}
+
+.smoke-border {
+    animation: smokeEffect 5s infinite alternate;
+    border: 5px solid #0056b3;
+    box-shadow: 0 0 20px #00b3ff, 0 0 30px #0056b3;
+}
+
+@keyframes smokeEffect {
+    0% {
+        box-shadow: 0 0 20px #00b3ff, 0 0 30px #0056b3;
+    }
+    100% {
+        box-shadow: 0 0 40px #00e1ff, 0 0 60px #00b3ff;
+    }
+}
+
+.title {
+    font-size: 3.5rem;
+    color: #00b3ff;
+    text-transform: uppercase;
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.service {
+    background-color: #003366;
+    border-radius: 15px;
+    padding: 20px;
+    width: 20%;
+    min-width: 180px;
+    max-width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 3px solid #00b3ff;
+}
+
+.service:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00b3ff, 0 0 40px #0056b3;
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    opacity: 0;
+}
+
+.service:hover img {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.service h3 {
+    color: #00b3ff;
+    font-size: 1.5rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #004080;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    color: #ffffff;
+    animation: emberEffect 5s infinite alternate;
+}
+
+@keyframes emberEffect {
+    0% {
+        background-color: #004080;
+        box-shadow: 0 0 20px #00b3ff, 0 0 30px #0056b3;
+    }
+    100% {
+        background-color: #003366;
+        box-shadow: 0 0 30px #00e1ff, 0 0 50px #00b3ff;
+    }
+}
+
+/* Credit Link */
+.credit-link {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: #00b3ff;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.credit-link:hover {
+    text-decoration: underline;
+}
