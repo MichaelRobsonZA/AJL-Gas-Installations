@@ -1,52 +1,78 @@
-// Function to handle service button clicks
-function serviceClick(serviceName) {
-    alert(`You selected: ${serviceName}`);
-    console.log(`Service clicked: ${serviceName}`);
 
-    const contactSection = document.querySelector('.contact');
-    if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+// tlm.to('#SMOKE', { y: -100})
+// tlm.to('#SMOKE2', { y: -100})
 
-    // Remove highlights and clicked effects from all services
-    document.querySelectorAll('.service').forEach(service => {
-        service.classList.remove('highlighted');
-        service.classList.remove('clicked');
-    });
 
-    // Highlight and animate the clicked service
-    const selectedService = Array.from(document.querySelectorAll('.service')).find(service =>
-        service.querySelector('h3').textContent === serviceName
-    );
+blackSmokeTlm = new gsap.timeline();
+whiteSmokeTlm = new gsap.timeline();
+flameTlm = new gsap.timeline();
+mellowTlm = new gsap.timeline();
 
-    if (selectedService) {
-        selectedService.classList.add('highlighted', 'clicked');
-    }
+blackSmokeItemStart = {
+    y: 0,
+    x: 0,
+    scale: 1.3
+};
+blackSmokeItemEnd = {
+    y: 'random(-100, -200)',
+    x: 'random(-10, 20)',
+    stagger: {
+        each: 0.1,
+        repeat: -1,
+        repeatRefresh: true,
+    },
+    duration: 'random(2, 3)',
+    transformOrigin: '50% 50%',
+    scale: 0,
+    ease: 'none',
+};
+
+whiteSmokeItemStart = {
+    y: 0,
+    x: 'random(-10, 30)',
+    scale: 0.5,
+    opacity: 0.3
+};
+whiteSmokeItemEnd = {
+    y: -600,
+    x: 'random(-30, 40)',
+    stagger: {
+        each: 0.1,
+        repeat: -1,
+        repeatRefresh: true,
+    },
+    duration: 'random(5, 6)',
+    transformOrigin: '50% 50%',
+    scale: 'random(1, 2)',
+    opacity: 0,
+    ease: 'none'
+};
+
+flameItemStart = {
+    x: 'random(-30, 30)',
+    y: 0,
+    scale: 'random(1, 3)',
+    opacity: 1
 }
 
-// Function to synchronize GIFs and make them vibrant
-window.onload = function() {
-    const gifs = document.querySelectorAll('.service img');
-    gifs.forEach(gif => {
-        gif.src = gif.src; // Trigger a reload of the GIF
-
-        // Add vibrant effect to GIFs
-        gif.style.filter = 'brightness(1.2) saturate(1.5)';
-        gif.style.transition = 'filter 0.3s ease-in-out';
-
-        // Add hover effect for extra vibrancy
-        gif.addEventListener('mouseover', () => {
-            gif.style.filter = 'brightness(1.5) saturate(2)';
-        });
-        gif.addEventListener('mouseout', () => {
-            gif.style.filter = 'brightness(1.2) saturate(1.5)';
-        });
-    });
+flameItemEnd = {
+    y: -150,
+    ease: 'none',
+    duration: 0.3,
+    stagger: {
+        each: 0.1,
+        repeatRefresh: true,
+        repeat: -1
+    },
+    opacity: 0
 }
 
-// Initializing the vibrant effect when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-    const gifs = document.querySelectorAll('.service[_{{{CITATION{{{_1{](https://github.com/84bluedevil/portfolio/tree/8823b61b72da0a978fb05ca8bee7d41312daed9b/scripts%2FsendMessage.php)[_{{{CITATION{{{_2{](https://github.com/Santa0727/sandwichmap-net/tree/7594d53a73c9e6d0ee8cb2a6028782c044d60c89/resources%2Fviews%2Flayouts%2Fcss.blade.php)    gifs.forEach(gif => {
-        gif.src = gif.src; // Trigger a reload of the GIF
-    });
+blackSmokeTlm.fromTo('#SMOKE1 > *', blackSmokeItemStart , blackSmokeItemEnd).seek(100);
+blackSmokeTlm.fromTo('#SMOKE2 > *', blackSmokeItemStart , blackSmokeItemEnd, 0).seek(100);
+whiteSmokeTlm.fromTo('#whitesmokes > *', whiteSmokeItemStart , whiteSmokeItemEnd, 0).seek(100);
+flameTlm.fromTo('#flame > *', flameItemStart , flameItemEnd, 0).seek(100);
+mellowTlm.fromTo(['#yellow', '#darken', '#burns'], { opacity: 0 }, { 
+    opacity: 1, 
+    stagger: 10, 
+    duration: 10
 });
