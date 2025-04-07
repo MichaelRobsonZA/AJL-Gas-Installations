@@ -1,0 +1,710 @@
+/* ---- Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto; /* Allow vertical scrolling if needed */
+}
+
+/* ---- Particles.js container ---- */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  background-image: url('../assets/img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* ---- Main Container ---- */
+.business-card-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1200px; /* Increased from 1100px */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px; /* Add space at bottom */
+}
+
+/* ---- Top Section ---- */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* ---- Logo in top-right corner ---- */
+.logo-area {
+  flex: 0 0 auto;
+}
+
+.logo-area img {
+  max-width: 250px; /* Increased from 200px */
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.7));
+  transition: transform 0.8s ease, filter 0.5s ease;
+}
+
+.logo-area img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 20px rgba(0, 123, 255, 1));
+}
+
+/* ---- Main Heading + Tagline ---- */
+.heading-container {
+  flex: 1;
+  text-align: center;
+}
+
+.main-heading, .second-heading {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow:
+    -3px -3px 0 #0056b3,
+    3px -3px 0 #0056b3,
+    -3px 3px 0 #0056b3,
+    3px 3px 0 #0056b3,
+    0 0 20px rgba(0, 123, 255, 0.8);
+  line-height: 1.1;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.second-heading {
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    0 0 15px rgba(0, 0, 0, 0.8);
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* ---- Bottom Section ---- */
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* ---- Contact Details Panel ---- */
+.contact-panel, .services-panel {
+  flex: 1;
+  padding: 35px; 
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-panel {
+  border-right: 2px solid rgba(0, 123, 255, 0.3);
+}
+
+.services-panel {
+  padding: 35px;
+}
+
+/* Fix the contact rows to match service rows */
+.contact-details {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.contact-icon {
+  color: #3ab4ff;
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.8));
+  flex-shrink: 0;
+  margin: 0 8px;
+}
+
+/* Fix spacing for the phone number rows */
+.contact-label {
+  color: #fff;
+  font-weight: bold;
+  margin-right: 5px;
+  text-shadow:
+    -2px -2px 0 #0056b3,
+    2px -2px 0 #0056b3,
+    -2px 2px 0 #0056b3,
+    2px 2px 0 #0056b3;
+  white-space: nowrap;
+  font-size: 1.7rem;
+}
+
+.contact-number {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: bold;
+  text-shadow:
+    -2px -2px 0 #0056b3,
+    2px -2px 0 #0056b3,
+    -2px 2px 0 #0056b3,
+    2px 2px 0 #0056b3;
+  font-size: 1.7rem;
+  white-space: nowrap;
+}
+
+.whatsapp-link {
+  margin-left: 5px;
+}
+
+/* Make the email row align properly */
+.email-link {
+  color: #4267B2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  text-align: center;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Style for the address text */
+.contact-row span {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-shadow:
+    -2px -2px 0 #0056b3,
+    2px -2px 0 #0056b3,
+    -2px 2px 0 #0056b3,
+    2px 2px 0 #0056b3;
+  text-align: center;
+  flex: 1;
+}
+
+/* Style for social link */
+.social-link {
+  color: #4267B2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  text-align: center;
+  flex: 1;
+}
+
+.services-panel {
+  padding: 35px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.service-icon {
+  color: #3ab4ff;
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.8));
+  flex: 0 0 60px; /* Fixed width, don't grow or shrink */
+  text-align: center;
+}
+
+.service-text {
+  flex: 1;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    0 0 15px rgba(0, 0, 0, 0.8);
+  transition: color 0.3s ease;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.service-row:hover .service-text {
+  color: #88c0ff;
+}
+
+/* ---- Panel Headings ---- */
+.contact-heading, .services-heading {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 #0056b3,
+    2px -2px 0 #0056b3,
+    -2px 2px 0 #0056b3,
+    2px 2px 0 #0056b3,
+    0 0 15px rgba(0, 123, 255, 0.8);
+}
+
+/* ---- Registered Badge ---- */
+.registered-badge-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.registered-badge {
+  display: inline-block;
+  font-weight: 900;
+  color: #fff;
+  background-color: #0056b3;
+  padding: 18px 30px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 3rem;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
+}
+
+.registered-badge.highlight {
+  background-color: #0067d5;
+  box-shadow: 0 0 30px rgba(0, 123, 255, 1);
+  transform: scale(1.03);
+}
+
+/* ---- Sample Icons Section ---- */
+.sample-icons-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+.icon-sample {
+  text-align: center;
+  margin: 0 15px;
+}
+
+.sample-icon {
+  font-size: 3rem;
+  color: #3ab4ff;
+  filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.8));
+}
+
+/* ---- Icon Animations ---- */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.spin {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.flame {
+  animation: flame 3s ease-in-out infinite;
+}
+
+@keyframes flame {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.8));
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 165, 255, 1));
+    transform: scale(1.15) translateY(-5px);
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.8));
+    transform: scale(1) translateY(0);
+  }
+}
+
+.wobble {
+  animation: wobble 5s ease-in-out infinite;
+}
+
+@keyframes wobble {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.flicker {
+  animation: flicker 4s linear infinite;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.8));
+  }
+  5% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(0, 123, 255, 1));
+  }
+  15% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 200, 255, 1));
+  }
+}
+
+/* New sample animations for the icon samples */
+.flame-alt {
+  animation: flame-alt 3s ease-in-out infinite;
+}
+
+@keyframes flame-alt {
+  0% {
+    color: #3ab4ff;
+    transform: scale(1);
+  }
+  25% {
+    color: #0080ff;
+  }
+  50% {
+    color: #88c0ff;
+    transform: scale(1.3);
+  }
+  75% {
+    color: #0056b3;
+  }
+  100% {
+    color: #3ab4ff;
+    transform: scale(1);
+  }
+}
+
+.pulse-fade {
+  animation: pulse-fade 4s ease-in-out infinite;
+}
+
+@keyframes pulse-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.4);
+    filter: drop-shadow(0 0 20px rgba(0, 123, 255, 1));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.color-shift {
+  animation: color-shift 5s linear infinite;
+}
+
+@keyframes color-shift {
+  0% {
+    color: #3ab4ff;
+    filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.8));
+  }
+  25% {
+    color: #00d5ff;
+    filter: drop-shadow(0 0 12px rgba(0, 213, 255, 0.9));
+  }
+  50% {
+    color: #0056b3;
+    filter: drop-shadow(0 0 15px rgba(0, 86, 179, 1));
+  }
+  75% {
+    color: #002db3;
+    filter: drop-shadow(0 0 12px rgba(0, 45, 179, 0.9));
+  }
+  100% {
+    color: #3ab4ff;
+    filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.8));
+  }
+}
+
+.float-rotate {
+  animation: float-rotate 6s ease-in-out infinite;
+}
+
+@keyframes float-rotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.service-icon.animated {
+  animation: grow 0.5s ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ---- Responsive Adjustments ---- */
+@media (max-width: 992px) {
+  .main-heading, .second-heading {
+    font-size: 5rem;
+  }
+  
+  .tagline {
+    font-size: 2.2rem;
+  }
+  
+  .contact-row, .service-text {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+
+  .logo-area {
+    margin-top: 20px;
+    order: -1;
+  }
+
+  .main-heading, .second-heading {
+    font-size: 4rem;
+  }
+
+  .tagline {
+    font-size: 1.8rem;
+  }
+
+  .contact-label, .contact-number, .email-link, .social-link, span, .service-text {
+    font-size: 2rem;
+  }
+
+  .bottom-section {
+    align-items: center;
+    margin: 0 40px;
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+  .contact-panel, .services-panel {
+    width: 100%;
+    padding: 25px 20px;
+    border-right: none;
+    border-bottom: 2px solid rgba(0, 123, 255, 0.3);
+    font-size: 1.8rem;
+  }
+  .contact-heading, .services-heading {
+    font-size: 2.2rem;
+  }
+  .logo-area {
+    margin-top: 20px;
+  }
+  .service-icon {
+    margin-top: 20px;
+  }
+  .main-heading, .second-heading {
+    text-align: center;
+  }
+  .services-list .service-row {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .second-heading {
+    font-size: 4rem;
+  }
+  .tagline {
+    font-size: 1.8rem;
+  }
+  .bottom-section {
+    flex-direction: column;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  .logo-area img {
+    max-width: 180px;
+  }
+  .contact-heading, .services-heading {
+    font-size: 2.2rem;
+  }
+  .contact-label, .contact-number, .email-link, .social-link, span, .service-text {
+    font-size: 1.6rem;
+  }
+  .contact-icon, .service-icon {
+    font-size: 1.5rem;
+  }
+  .whatsapp-icon {
+    font-size: 1.5rem;
+  }
+  .sample-icons-container {
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+  .icon-sample {
+    margin: 10px;
+  }
+  .registered-badge {
+    font-size: 2rem;
+    padding: 15px 20px;
+  }
+  .services-list .service-row {
+    justify-content: center;
+  }
+}
